@@ -1,17 +1,16 @@
 import styles from './button.edit.module.css'
 
-interface IProps{
+
+interface EProps{
     name:string;
-   // onClick: ()=>void;
-    state:boolean;
+    onClick:()=>void;
 }
-export  const ButtonEdit = (props:IProps)=>{
+export  const ButtonEdit = (props:EProps)=>{
+
     return(
-        <button
+        <button onClick={props.onClick}
             className={styles.button}
-           // onClick={props.onClick}
-        >
-            {props.name}
+        > {props.name}
         </button>
     )
 }
