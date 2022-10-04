@@ -1,24 +1,24 @@
-import styles from './input.module.css'
-import {FC} from "react";
+import styles from "./input.module.css";
+import { FC } from "react";
 
-interface IProps{
-    externalValue?:string;
-    onChangeInput:(value:string)=>void
+interface IProps {
+  value?: string;
+  onChange: (value: string) => void;
 }
 
-export const Input: FC<IProps>=({onChangeInput,externalValue})=>{
+export const Input: FC<IProps> = ({ onChange, value }) => {
+  const handleChange = (event: any) => {
+    onChange(event.target.value);
+  };
 
-    const onChange = (event: any)=>{
-        onChangeInput(event.target.value)
-    }
-
-    return(
-        <input
-            className={styles.input}
-            defaultValue={''}
-            value={externalValue}
-            type='text'
-            onChange={onChange}/>
-    )
-}
-export default Input
+  return (
+    <input
+      placeholder="Set text"
+      className={styles.input}
+      value={value}
+      type="text"
+      onChange={handleChange}
+    />
+  );
+};
+export default Input;
