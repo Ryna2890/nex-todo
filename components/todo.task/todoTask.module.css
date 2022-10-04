@@ -1,0 +1,20 @@
+.task {
+    display: flex;
+    width: 315px;
+    margin: 16px 16px;
+    border-radius: 8px;
+}
+
+.task__text {
+    width: 230px;
+    margin-top: 8px;
+    margin-bottom: 8px;
+    word-break: break-all;
+}
+
+.do{
+    background-color: #A5A6F63D;
+}
+.done{
+    background-color: #D9D9D93D;
+}
